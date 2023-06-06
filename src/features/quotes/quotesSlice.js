@@ -23,6 +23,12 @@ export default function quotesReducer(state = initialState, action) {
   
        count++
   }
+       case "add/votes"
+      count = state.quotes.find(quote=> quote.id === quote.id)
+      return{
+  
+       count--
+  }
     default:
   return state;
 }
