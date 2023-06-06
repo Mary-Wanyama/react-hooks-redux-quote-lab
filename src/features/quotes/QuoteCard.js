@@ -3,6 +3,14 @@ import {useSelect} from "react-redux"
 
 function QuoteCard(props) {
   const quote = useSelect(quote=> quote)
+  function handleClick(){
+    dispatch({ type: "votes/add" });
+  }
+  fuction handleDelete(){
+  dispatch(type: "quote/delete")
+  }
+  function handleRemove(){
+    dispatch({type: "votes/reduce"})}
   return (
     <div>
       <div className="card card-inverse card-success card-primary mb-3 text-center">
@@ -21,13 +29,13 @@ function QuoteCard(props) {
             role="group"
             aria-label="Basic example"
           >
-            <button type="button" className="btn btn-primary">
+            <button type="button" className="btn btn-primary" onClick={handleClick}>
               Upvote
             </button>
-            <button type="button" className="btn btn-secondary">
+            <button type="button" className="btn btn-secondary" onClick={handleRemove}>
               Downvote
             </button>
-            <button type="button" className="btn btn-danger">
+            <button type="button" className="btn btn-danger" onClick={handleDelete}>
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
